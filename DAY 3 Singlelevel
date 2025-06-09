@@ -16,9 +16,7 @@ class subclass extends Singlelevel{
 	}
 	
 }
-class subclass2 extends subclass{
-	void 
-}
+
 class Main{
 	public static void main(String[] args) {
 		subclass ref=new subclass();
