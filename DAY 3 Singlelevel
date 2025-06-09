@@ -1,0 +1,30 @@
+package Program;
+
+//superclass
+public class Singlelevel {
+	void call() {
+		System.out.println("Ringing");
+
+	}
+	
+}
+//sub class
+class subclass extends Singlelevel{
+	void Phone() {
+		System.out.println("dialing");
+
+	}
+	
+}
+class subclass2 extends subclass{
+	void 
+}
+class Main{
+	public static void main(String[] args) {
+		subclass ref=new subclass();
+		ref.call();
+		ref.Phone();
+		
+		
+    }
+}
