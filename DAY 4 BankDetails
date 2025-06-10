@@ -31,6 +31,7 @@ class SbiAcc{
 	
 	public void setWithdrawn (int Withdrawn) {
 		Balance -= Withdrawn; 
+		System.out.println("Withdrawn amount:" + Withdrawn);
 		}
 	}
 
