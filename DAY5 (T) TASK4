@@ -1,0 +1,33 @@
+import java.io.*;
+
+class StudentMarks {
+    public static void main(String args[]) throws Exception {
+        FileReader fr = new FileReader("students.txt");
+        BufferedReader br = new BufferedReader(fr);
+
+        FileWriter fw = new FileWriter("results.txt");
+        BufferedWriter bw = new BufferedWriter(fw);
+
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] parts = line.split(",");
+            String name = parts[0];
+            int total = 0;
+            int count = 0;
+
+            for (int i = 1; i < parts.length; i++) {
+                total += Integer.parseInt(parts[i]);
+                count++;
+            }
+
+            int average = total / count;
+
+            String result = name + " Total: " + total + " Average: " + average;
+            bw.write(result);
+            bw.newLine();
+        }
+
+        br.close();
+        bw.close();
+    }
+}
