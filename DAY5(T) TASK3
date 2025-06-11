@@ -1,0 +1,23 @@
+package ExceptionHandling;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
+
+public class Task3 {
+
+	public static void main(String[] args) {
+	try{
+		FileWriter myWriter = new FileWriter("Task1.txt");
+		myWriter.write("Loading or Downloading software is strictly prohibited,in every college's.." );
+		myWriter.close();
+		System.out.println("Successfully wrote to the file line by line using String");
+	}
+	catch(IOException e) {
+		System.out.println("Not Found a File");
+		e.printStackTrace();
+	}
+
+	}
+
+}
