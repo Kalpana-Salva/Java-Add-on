@@ -1,0 +1,23 @@
+package ExceptionHandling;
+import java.io.*;
+public class Main {
+	
+	public static void main(String[]args) {
+	String filename ="C://Users//TEMP.KGISLEDU//Desktop//Day-5//Task1.txt";
+	try(BufferedReader br = new BufferedReader(new FileReader(filename))){
+		String Line;
+		if((Line = br.readLine())!=null) {
+			System.out.println(Line);
+			
+		}
+	}
+	catch(Exception e) {
+		System.out.println("Filenotfound");
+	}
+	
+	}
+
+	
+	}
+
+
