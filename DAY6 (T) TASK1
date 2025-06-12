@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Student {
 	
 		public static void main(String[] args) {
-			ArrayList<Object> arr = new ArrayList();
+			ArrayList<Object> arr = new ArrayList<Object>();
 			
 			arr.add("Kalpana");
 			arr.add("A");
