@@ -1,0 +1,58 @@
+import java.util.*;
+import java.io.*;
+
+public class StudentCourseApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> names = new ArrayList<>();
+        HashMap<String, String> idMap = new HashMap<>();
+        HashMap<String, List<String>> courseMap = new HashMap<>();
+
+        while (true) {
+            System.out.println("\n1.Add 2.Search 3.Delete 4.SaveToFile 5.Exit");
+            int ch = sc.nextInt(); sc.nextLine();
+
+            if (ch == 1) {
+                System.out.print("Name: "); String name = sc.nextLine();
+                System.out.print("ID: "); String id = sc.nextLine();
+                names.add(name); idMap.put(id, name);
+
+                System.out.print("No. of courses: "); int n = sc.nextInt(); sc.nextLine();
+                List<String> courses = new ArrayList<>();
+                for (int i = 0; i < n; i++) {
+                    System.out.print("Course " + (i+1) + ": ");
+                    courses.add(sc.nextLine());
+                }
+                courseMap.put(id, courses);
+            }
+            else if (ch == 2) {
+                System.out.print("Enter ID: "); String id = sc.nextLine();
+                if (idMap.containsKey(id)) {
+                    System.out.println("Name: " + idMap.get(id));
+                    System.out.println("Courses: " + courseMap.get(id));
+                } else System.out.println("Not found.");
+            }
+            else if (ch == 3) {
+                System.out.print("Enter ID: "); String id = sc.nextLine();
+                if (idMap.containsKey(id)) {
+                    names.remove(idMap.get(id));
+                    idMap.remove(id); courseMap.remove(id);
+                    System.out.println("Deleted.");
+                } else System.out.println("Not found.");
+            }
+            else if (ch == 4) {
+                try (FileWriter fw = new FileWriter("a.txt")) {
+                    for (String id : idMap.keySet()) {
+                        fw.write("ID: " + id + ", Name: " + idMap.get(id) + "\n");
+                        fw.write("Courses: " + courseMap.get(id) + "\n\n");
+                    }
+                    System.out.println("Saved to a.txt");
+                } catch (IOException e) {
+                    System.out.println("File error.");
+                }
+            }
+            else if (ch == 5) break;
+            else System.out.println("Invalid");
+        }
+    }
+}
