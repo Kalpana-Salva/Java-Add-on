@@ -1,0 +1,15 @@
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY AUTO_INCREMENT,
+    course_name VARCHAR(100),
+    fee INT
+);
+
+INSERT INTO courses (course_name, fee) VALUES
+('Mathematics', 3000),
+('Physics', 2500),
+('Chemistry', 2800),
+('Biology', 2200),
+('Computer Science', 3500);
+
+SELECT * FROM courses
+ORDER BY fee ASC;
