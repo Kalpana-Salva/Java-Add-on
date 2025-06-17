@@ -1,0 +1,17 @@
+CREATE TABLE students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    marks INT
+);
+
+
+INSERT INTO students (name, marks) VALUES
+('Alice', 85),
+('Bob', 72),
+('Charlie', 90),
+('David', 65),
+('Eve', 88);
+
+
+SELECT * FROM students
+WHERE marks > 80;
