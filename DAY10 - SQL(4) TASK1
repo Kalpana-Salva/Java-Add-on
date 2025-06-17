@@ -1,0 +1,21 @@
+Create TABLE STUDENTCOURSE(
+StudentID int,
+SName varchar(20),
+Course varchar(20),
+Salary int
+);
+
+insert into STUDENTCOURSE(StudentID,SName,Course,Salary) values
+(1,'Kalpana','Web Development',15000),
+(2,'Sreya','Software Development',15500),
+(3,'Kaviya','Web Development',12000),
+(4,'Usha','Maya Multimedia',20000)
+
+select*
+from STUDENTCOURSE
+
+select count(*),StudentID,Course
+from STUDENTCOURSE
+group by StudentID,Course
+
+
