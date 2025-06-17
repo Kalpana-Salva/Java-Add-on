@@ -1,0 +1,20 @@
+Create TABLE Department(
+DeptNo int,
+DName varchar(20),
+DSalary int
+);
+
+insert into Department(DeptNo,DName,DSalary) values
+(1,'Web Development',15000),
+(2,'Software Development',15500),
+(3,'Web Development',12000),
+(4,'Maya Multimedia',20000)
+
+select*
+from Department
+
+select avg(DSalary)
+from Department;
+
+
+
