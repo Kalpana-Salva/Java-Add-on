@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 public class InsertStudentData {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/your_database_name";
-        String user = "your_username";
-        String password = "your_password";
+        String url = "jdbc:mysql://localhost:3306/kalpanabca";
+        String user = "kalpanabca";
+        String password = "kalpzzz";
 
         String insertQuery = "INSERT INTO student (student_id, name, class) VALUES (?, ?, ?)";
 
@@ -23,12 +23,12 @@ public class InsertStudentData {
             pstmt.executeUpdate();
 
             pstmt.setInt(1, 2);
-            pstmt.setString(2, "Bala Singh");
+            pstmt.setString(2, "Bala ");
             pstmt.setString(3, "10B");
             pstmt.executeUpdate();
 
             pstmt.setInt(1, 3);
-            pstmt.setString(2, "Chetan Das");
+            pstmt.setString(2, "Charu");
             pstmt.setString(3, "10A");
             pstmt.executeUpdate();
 
