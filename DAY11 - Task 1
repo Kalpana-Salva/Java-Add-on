@@ -1,0 +1,40 @@
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    class VARCHAR(10)
+);
+
+CREATE TABLE mark (
+    mark_id INT ,
+    student_id INT,
+    subject VARCHAR(50),
+    marks INT,
+    
+);
+
+INSERT INTO student (student_id, name, class) VALUES
+(1, 'Anil', '10A'),
+(2, 'Bala', '10B'),
+(3, 'Chetan', '10A');
+
+INSERT INTO mark (mark_id, student_id, subject, marks) VALUES
+(101, 1, 'Math', 85),
+(102, 1, 'Science', 78),
+(103, 2, 'Math', 90),
+(104, 3, 'Math', 65),
+(105, 3, 'Science', 72);
+
+SELECT 
+    student.student_id,
+    student.name,
+    student.class,
+    mark.subject,
+    mark.marks
+FROM 
+    student
+JOIN 
+    mark ON student.student_id = mark.student_id;
+
+
+
+
