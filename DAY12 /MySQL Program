@@ -1,0 +1,52 @@
+package Mysqlprogram;
+
+import java.sql.DriverManager;
+
+import java.sql.*;
+
+public class JdbcMain {
+
+	public static void main(String[] args) throws ClassNotFoundException ,SQLException{
+		
+		
+		//Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		String url = "jdbc:mysql://localhost";
+		String username ="";
+		String password = "";
+		
+		
+		Connection connect = DriverManager.getConnection(url,username,password);
+		System.out.println("Driver Loaded");
+		int cid =03;
+		String cname="IMS";
+		
+		
+		String sql = "insert into course values(?,?)";
+		PreparedStatement st = connect.prepareStatement(sql);
+		st.setInt(1, cid);
+		st.setString(2, cname);
+		
+		st.executeUpdate();
+		System.out.println("data inserted done using prepared statement");
+		connect.close();
+		
+		
+		//Statement st = connect.createStatement();
+		
+		//String sql = "create table course (cid int,cname varchar(20))";
+		
+		//String sql = "insert into course values(01,'FSD')";
+		
+		//String sql = "update course set cname ='WD' where cid = 01 ";
+		
+		//String sql = "drop table course";
+		
+		int val = st.executeUpdate(sql);
+		
+		//System.out.println("table created successfully");
+		
+		System.out.println("inserted "+"val"+"rows");
+		
+		}
+}
